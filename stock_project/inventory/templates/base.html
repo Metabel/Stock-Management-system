@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Inventory{% endblock %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div><h1 style="margin:0">Inventory</h1><div class="muted">CRUD & Auth (single app)</div></div>
+      <nav>
+        {% if user.is_authenticated %}
+          Hello, {{ user.username }} |
+          <a href="{% url 'inventory:item_list' %}">Items</a>
+          {% if user.is_staff %}<a href="{% url 'inventory:item_create' %}">New Item</a>{% endif %}
+          <a href="{% url 'inventory:logout' %}">Logout</a>
+        {% else %}
+          <a href="{% url 'inventory:login' %}">Login</a>
+          <a href="{% url 'inventory:register' %}">Register</a>
+        {% endif %}
+      </nav>
+    </header>
+
+    {% if messages %}
+      <ul>
+      {% for m in messages %}
+        <li>{{ m }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
