@@ -1,0 +1,42 @@
+<!Doctype html> 
+<html>
+<head>
+        <title>Product List</title>
+ {% load static %}  
+ <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">  
+</head>
+<body>
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+
+    <h1>Products</h1>
+    {% if products %}
+    <table>
+<tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <a href="{% url 'add_product' %}">Add Product</a>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.price }}</td>
+    
+    <td>
+      <a href="{% url 'edit_product' product.id %}">✏ Edit</a> |
+      <a href="{% url 'delete_product' product.id %}">🗑 Delete</a>
+</td>
+</tr>
+    {% endfor %}
+</table>
+
+{% else %}
+<p>No products available.</p>
+{% endif %}
+
+</body>
+</html>

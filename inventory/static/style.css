@@ -1,0 +1,105 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 30px;
+    background-color:blue;
+}
+h1{
+    color:#2C3E50 ;
+}
+table{
+    border-collapse: collapse;
+    width:80%;
+    margin-top: 20px;
+}
+table, th, td{
+    border:1px solid #2C3E50;
+}
+th,td{
+    padding:10px;
+    text-align: left;
+}
+tr:nth-child(even){
+    background-color:#2C3E50 ;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+h1, h2 {
+    color: #2C3E50;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Forms */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 5px;
+    border: 1px solid #BDC3C7;
+}
+
+button {
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E67E22;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #BDC3C7;
+    text-align: center;
+}
+
+th {
+    background-color: #2C3E50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ECF0F1;
+}
+
+/* Logout form */
+form.logout-form {
+    width: auto;
+    margin: 10px;
+    text-align: right;
+}
+form.logout-form button {
+    width: auto;
+    padding: 5px 15px;
+    font-size: 14px;
+}

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Stock System</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<h2>Sign Up</h2>
+
+<!-- Signup form -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+</form>
+
+<!-- Link to login -->
+<p style="text-align:center;">
+    Already have an account? <a href="{% url 'login' %}">Login here</a>
+</p>
+
+</body>
+</html>
